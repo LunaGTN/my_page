@@ -1,6 +1,6 @@
 import streamlit as st
 import streamlit_authenticator as stauh
-from my_page.acc import accueil, recette
+from acc import accueil, recette
 from streamlit_option_menu import option_menu
 
 lesDonneesDesComptes = {'usernames': {'utilisateur': {'name': 'utilisateur',
@@ -21,7 +21,7 @@ authenticator = stauh.Authenticate(credentials = lesDonneesDesComptes, # Les don
     key = 'secret_key', # La clé du cookie, un str quelconque# Le nombre de jours avant que le cookie expire 
 )
 
-authentication_status = authenticator.login("Connexion", "sidebar")
+authentication_status = authenticator.login()
 if st.session_state['authentication_status'] is False:
     st.error("L'username ou le password est/sont incorrect")
 elif st.session_state['authentication_status'] is None:
