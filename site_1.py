@@ -1,6 +1,6 @@
 import streamlit as st
-from streamlit_authenticator import Authenticate
-from acc import accueil, recette
+import streamlit_authenticator 
+from my_page.acc import accueil, recette
 from streamlit_option_menu import option_menu
 
 lesDonneesDesComptes = {'usernames': {'utilisateur': {'name': 'utilisateur',
