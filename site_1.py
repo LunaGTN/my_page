@@ -1,5 +1,5 @@
 import streamlit as st
-import streamlit_authenticator 
+import streamlit_authenticator as stauh
 from my_page.acc import accueil, recette
 from streamlit_option_menu import option_menu
 
@@ -16,7 +16,7 @@ lesDonneesDesComptes = {'usernames': {'utilisateur': {'name': 'utilisateur',
    'logged_in': False, # Sera géré automatiquement
    'role': 'administrateur'}}}
 
-authenticator = Authenticate(credentials = lesDonneesDesComptes, # Les données des comptes
+authenticator = stauh.Authenticate(credentials = lesDonneesDesComptes, # Les données des comptes
     cookie_name = 'cookie session', # Le nom du cookie, un str quelconque
     key = 'secret_key', # La clé du cookie, un str quelconque# Le nombre de jours avant que le cookie expire 
 )
